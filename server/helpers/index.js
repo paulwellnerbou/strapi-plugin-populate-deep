@@ -43,11 +43,6 @@ const getFullPopulateObject = (modelUid, maxDepth = 20, ignore, fieldPopulateCon
   )) {
     if (ignore?.includes(key) || ignore?.includes(model.collectionName + '.' + key)) {
       debug && console.debug(`[strapi-plugin-populate-deep] DEBUG Ignoring collectionName: ${model.collectionName}, field: ${key}`)
-      console.debug({
-        'ignore?.includes(key)': ignore?.includes(key),
-        'ignore?.includes(model.collectionName.key)': ignore?.includes(model.collectionName + '.' + key),
-        ignore
-      })
       continue
     }
 
